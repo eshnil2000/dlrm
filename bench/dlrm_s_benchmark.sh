@@ -5,7 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 #check if extra argument is passed to the test
-if [[ $# == 1 ]]; then
+if [[ $# -eq 1 ]]; then
     dlrm_extra_option=$1
 else
     dlrm_extra_option=""
