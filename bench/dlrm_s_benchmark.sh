@@ -43,7 +43,7 @@ emb="1000000-1000000-1000000-1000000-1000000-1000000-1000000-1000000"
 interaction="dot"
 tnworkers=0
 tmb_size=16384
-
+nepochs=50
 #_args="--mini-batch-size="${mb_size}\
 _args=" --num-batches="${nbatches}\
 " --data-generation="${data}\
@@ -56,7 +56,8 @@ _args=" --num-batches="${nbatches}\
 " --numpy-rand-seed="${rand_seed}\
 " --print-freq="${print_freq}\
 " --print-time"\
-" --enable-profiling "
+" --enable-profiling "\
+" --nepochs="${nepochs}
 
 c2_args=" --caffe2-net-type="${c2_net}
 
