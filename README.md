@@ -1,3 +1,29 @@
+Instructions to Run:
+==========================
+===IN VM===
+```
+sudo apt-get update
+sudo apt-get install nano tmux -y
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo docker pull anibali/pytorch:2.0.1-nocuda
+sudo docker run -it anibali/pytorch:2.0.1-nocuda /bin/bash 
+```
+===INSIDE DOCKER CONTAINER===
+```
+pip install tensorflow
+apt update -y
+apt-get install nano wget tmux numactl -y
+git clone https://github.com/eshnil2000/dlrm.git
+cd dlrm/
+pip install -r requirements.txt
+git clone https://github.com/mlperf/logging.git mlperf-logging
+pip install -e mlperf-logging
+sh test/dlrm_s_test.sh
+sh bench/dlrm_s_benchmark.sh
+```
+
 Deep Learning Recommendation Model for Personalization and Recommendation Systems:
 =================================================================================
 *Copyright (c) Facebook, Inc. and its affiliates.*
