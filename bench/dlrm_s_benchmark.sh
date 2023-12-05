@@ -13,9 +13,9 @@ fi
 #echo $dlrm_extra_option
 
 cpu=1
-gpu=1
+gpu=0
 pt=1
-c2=1
+c2=0
 
 ncores=28 #12 #6
 nsockets="0"
@@ -88,7 +88,8 @@ if [ $cpu = 1 ]; then
     echo "-------------------------------"
     echo "Running C2 (log file: $outf)"
     echo "-------------------------------"
-    cmd="$numa_cmd $dlrm_c2_bin --mini-batch-size=$mb_size $_args $c2_args $dlrm_extra_option 1> $outf 2> $outp"
+    #cmd="$numa_cmd $dlrm_c2_bin --mini-batch-size=$mb_size $_args $c2_args $dlrm_extra_option 1> $outf 2> $outp"
+    cmd="$dlrm_c2_bin --mini-batch-size=$mb_size $_args $c2_args $dlrm_extra_option 1> $outf 2> $outp"
     echo $cmd
     eval $cmd
     min=$(grep "iteration" $outf | awk 'BEGIN{best=999999} {if (best > $7) best=$7} END{print best}')
