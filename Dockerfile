@@ -16,4 +16,4 @@ RUN git clone https://github.com/mlperf/logging.git mlperf-logging
 RUN pip install -e mlperf-logging
 
 # Run the test script
-CMD ["sh", "test/dlrm_s_test.sh"]
+CMD ["sh", "bench/dlrm_s_benchmark.sh"]
