@@ -12,7 +12,7 @@ RUN git clone https://github.com/eshnil2000/dlrm.git
 WORKDIR /dlrm
 
 # Install Python dependencies from requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r /dlrm/requirements.txt
 
 # Clone the mlperf-logging repository
 RUN git clone https://github.com/mlperf/logging.git mlperf-logging
