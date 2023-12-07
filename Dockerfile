@@ -4,9 +4,7 @@ FROM anibali/pytorch:2.0.1-nocuda
 # Install additional dependencies
 RUN pip install tensorflow
 RUN apt-get update -y && \
-    apt-get install -y nano wget tmux numactl && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y nano wget tmux numactl
 
 # Clone the dlrm repository
 RUN git clone https://github.com/eshnil2000/dlrm.git
