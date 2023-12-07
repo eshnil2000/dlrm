@@ -43,7 +43,7 @@ emb="1000000-1000000-1000000-1000000-1000000-1000000-1000000-1000000"
 interaction="dot"
 tnworkers=0
 tmb_size=16384
-nepochs=50
+nepochs=2
 #_args="--mini-batch-size="${mb_size}\
 _args=" --num-batches="${nbatches}\
 " --data-generation="${data}\
@@ -81,8 +81,8 @@ if [ $cpu = 1 ]; then
     min=$(grep "iteration" $outf | awk 'BEGIN{best=999999} {if (best > $7) best=$7} END{print best}')
     echo "Min time per iteration = $min"
     # move profiling file(s)
-    mv $outp ${outf//".log"/".prof"}
-    mv ${outp//".prof"/".json"} ${outf//".log"/".json"}
+    #mv $outp ${outf//".log"/".prof"}
+    #mv ${outp//".prof"/".json"} ${outf//".log"/".json"}
 
   fi
   if [ $c2 = 1 ]; then
@@ -98,7 +98,7 @@ if [ $cpu = 1 ]; then
     min=$(grep "iteration" $outf | awk 'BEGIN{best=999999} {if (best > $7) best=$7} END{print best}')
     echo "Min time per iteration = $min"
     # move profiling file (collected from stderr above)
-    mv $outp ${outf//".log"/".prof"}
+    #mv $outp ${outf//".log"/".prof"}
   fi
 fi
 
