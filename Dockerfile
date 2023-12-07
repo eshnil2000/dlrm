@@ -5,8 +5,7 @@ FROM anibali/pytorch:2.0.1-nocuda
 RUN pip install tensorflow
 
 # Clone the dlrm repository
-RUN git clone https://github.com/eshnil2000/dlrm.git
-
+RUN git clone https://github.com/eshnil2000/dlrm.git /dlrm
 
 # Set the working directory to dlrm/
 WORKDIR /dlrm
