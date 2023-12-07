@@ -37,6 +37,7 @@ resource "aws_instance" "ec2_instance" {
       "sudo apt-get install -y docker.io wget",
       "sudo systemctl start docker",
       "wget https://raw.githubusercontent.com/eshnil2000/dlrm/main/Dockerfile",
+      "git clone https://github.com/eshnil2000/dlrm && cd dlrm",
       "sudo docker build -t dlrm-nilesh:latest .",
       "sudo docker run -d dlrm-nilesh:latest"
     ]
