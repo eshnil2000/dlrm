@@ -4,8 +4,6 @@ FROM anibali/pytorch:2.0.1-nocuda
 # Install additional dependencies
 RUN pip install tensorflow
 
-RUN apt-get update -y 
-
 # Clone the dlrm repository
 RUN git clone https://github.com/eshnil2000/dlrm.git
 
