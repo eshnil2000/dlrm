@@ -4,7 +4,7 @@ Instructions to Run:
 ```
 git clone https://github.com/eshnil2000/dlrm && cd dlrm
 terraform apply --auto-approve
-
+```
 ## manual
 ```
 git clone https://github.com/eshnil2000/dlrm && cd dlrm
