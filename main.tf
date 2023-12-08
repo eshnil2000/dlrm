@@ -43,7 +43,7 @@ resource "aws_instance" "ec2_instance" {
       "touch sarS.out",
       "sudo docker build -t dlrm-nilesh:latest .",
       "sar -S 30 240 >>sarS.out &",
-      "sar -S 30 240 >>sarS.out &",
+      "sar -r 30 240 >>sarM.out &",
       "sar -P ALL 30 240 >>sarC.out &",
       "sudo docker run -d -v /home/ubuntu/dlrm/:/app dlrm-nilesh:latest"
     ]
