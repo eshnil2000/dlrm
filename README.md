@@ -1,7 +1,16 @@
 Instructions to Run:
-git clone https://github.com/eshnil2000/dlrm
+
+##terraform
+```
+git clone https://github.com/eshnil2000/dlrm && cd dlrm
+terraform apply --auto-approve
+
+## manual
+```
+git clone https://github.com/eshnil2000/dlrm && cd dlrm
 sudo docker build -t dlrm-nilesh:latest .
 sudo docker run -d -v /home/ubuntu/dlrm/:/app dlrm-nilesh:latest
+```
 
 ==========================
 ===USE m5.16xlarge ===
