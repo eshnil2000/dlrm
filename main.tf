@@ -34,7 +34,7 @@ resource "aws_instance" "ec2_instance" {
   provisioner "remote-exec" {
     inline = [
       "sudo apt update",
-      "sudo apt-get install -y docker.io wget sysstat && sudo sed -i 's#5-55/1 *#5-55/2 *#' /etc/cron.d/sysstat && sudo sed -i 's#FALSE#TRUE#' /etc/default/sysstat && sudo service sysstat restart",
+      "sudo apt-get install -y docker.io wget sysstat && sudo sed -i 's#5-55/1 *#5-55/2 *#' /etc/cron.d/sysstat && sudo sed -i 's#false#true#' /etc/default/sysstat && sudo service sysstat restart",
       "sudo systemctl start docker",
       "wget https://raw.githubusercontent.com/eshnil2000/dlrm/main/Dockerfile",
       "git clone https://github.com/eshnil2000/dlrm && cd dlrm",
