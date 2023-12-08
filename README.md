@@ -1,4 +1,8 @@
 Instructions to Run:
+git clone https://github.com/eshnil2000/dlrm
+sudo docker build -t dlrm-nilesh:latest .
+sudo docker run -d -v /home/ubuntu/dlrm/:/app dlrm-nilesh:latest
+
 ==========================
 ===USE m5.16xlarge ===
 ===IN VM===
