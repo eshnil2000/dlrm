@@ -38,8 +38,14 @@ resource "aws_instance" "ec2_instance" {
       "sudo systemctl start docker",
       "wget https://raw.githubusercontent.com/eshnil2000/dlrm/main/Dockerfile",
       "git clone https://github.com/eshnil2000/dlrm && cd dlrm",
+      "touch sarM.out",
+      "touch sarC.out",
+      "touch sarS.out",
       "sudo docker build -t dlrm-nilesh:latest .",
-      "sudo docker run -d -v /home/ubuntu/dlrm/:/app dlrm-nilesh:latest"&&
+      "sar -S 30 240 >>sarS.out &",
+      "sar -S 30 240 >>sarS.out &",
+      "sar -P ALL 30 240 >>sarC.out &",
+      "sudo docker run -d -v /home/ubuntu/dlrm/:/app dlrm-nilesh:latest"
     ]
   }
  
