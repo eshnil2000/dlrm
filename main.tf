@@ -39,7 +39,7 @@ resource "aws_instance" "ec2_instance" {
       "wget https://raw.githubusercontent.com/eshnil2000/dlrm/main/Dockerfile",
       "git clone https://github.com/eshnil2000/dlrm && cd dlrm",
       "sudo docker build -t dlrm-nilesh:latest .",
-      "sudo docker run -d dlrm-nilesh:latest"
+      "sudo docker run -d -v /home/ubuntu/dlrm/:/app dlrm-nilesh:latest"
     ]
   }
 
