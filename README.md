@@ -1,4 +1,12 @@
 Instructions to Run:
+## latest manual
+
+docker build -t dlrm-2-8-2025:latest .
+sudo docker run -it dlrm-2-8-2025:latest /bin/bash
+
+in container:
+sh bench/dlrm_s_benchmark.sh
+
 
 ##terraform
 ```
