@@ -1,19 +1,27 @@
 # Use the anibali/pytorch image as the base image
 FROM anibali/pytorch:2.0.1-nocuda
 
-# Install additional dependencies
+# Switch to root user for system package installation and directory setup
+USER root
+
+# Update package lists and install system dependencies
+RUN apt-get update -y && apt-get install -y nano wget tmux numactl
+
+# Create a directory for DLRM and set correct permissions
+RUN mkdir -p /dlrm && chown user:user /dlrm
+
+# Switch to non-root user
+USER user
 RUN pip install tensorflow
+# Clone the DLRM repository inside /dlrm
+RUN git clone https://github.com/eshnil2000/dlrm.git /dlrm
 
-COPY . .
+# Set the working directory
+WORKDIR /dlrm
 
-# Install Python dependencies from requirements.txt
-RUN pip install -r requirements.txt
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Clone the mlperf-logging repository
-RUN git clone https://github.com/mlperf/logging.git mlperf-logging
-
-# Install mlperf-logging as a Python package
-RUN pip install -e mlperf-logging
-
-# Run the test script
-CMD ["sh", "bench/dlrm_s_benchmark.sh"]
+# Clone and install mlperf-logging
+RUN git clone https://github.com/mlperf/logging.git mlperf-logging && \
+    pip install --no-cache-dir -e mlperf-logging
